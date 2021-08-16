@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+
+
 const Question = ({title,info}) => {
-  return <article className="question">
+
+    const [showInfo,setShowInfo] = useState(false);
+    return <article className="question">
 
       <header>
           <h4>{title}</h4>
@@ -9,6 +13,8 @@ const Question = ({title,info}) => {
               btn
           </button>
       </header>
+      {showInfo && <p>{info}</p> }
+
   </article>;
 };
 
